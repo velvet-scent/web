@@ -38,7 +38,7 @@ const products = [
   { id: 34, name: "Gilded Muguet", category: "Women", priceGHS: 1200, priceUSD: 100, description: "Golden interpretations of classic lily of the valley.", rating: 4.5, image: "images/products/34.jpg", isBestSeller: false, isNew: false },
 
   // UNISEX (16)
-  { id: 35, name: "Santal 33 Tribute", category: "Unisex", priceGHS: 1650, priceUSD: 137, description: "Iconic cardamom, iris, violet, and Australian sandalwood.", rating: 5, image: "images/products/35.jpg", isBestSeller: true, isNew: false },
+  { id: 35, name: "Mirage Wonder", category: "Unisex", priceGHS: 300, priceUSD: 30, description: "Sweet vanilla, citrus zest, jasmine, amber, and smooth sandalwood.", rating: 5, image: "images/products/mirage_wonder.jpeg", isBestSeller: true, isNew: false },
   { id: 36, name: "Fig & Woods", category: "Unisex", priceGHS: 1100, priceUSD: 91, description: "Green fig leaf, creamy fig sap, and white cedar.", rating: 4.7, image: "images/products/36.jpg", isBestSeller: false, isNew: true },
   { id: 37, name: "Bergamot Breeze", category: "Unisex", priceGHS: 850, priceUSD: 70, description: "Sunny Calabrian bergamot and sheer musk.", rating: 4.4, image: "images/products/37.jpg", isBestSeller: false, isNew: false },
   { id: 38, name: "Oud & Rose", category: "Unisex", priceGHS: 1750, priceUSD: 145, description: "The classic Middle Eastern pairing of dark oud and sweet rose.", rating: 4.8, image: "images/products/38.jpg", isBestSeller: false, isNew: false },
