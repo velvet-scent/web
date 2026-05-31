@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details | Velvet Scent</title>
+  <meta name="description" content="Discover the exquisite details of our luxury fragrance.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container navbar">
+      <a href="index.html" class="logo">Velvet Scent</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="new-arrivals.html">New Arrivals</a>
+        <a href="best-sellers.html">Best Sellers</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-icons">
+        <button id="theme-toggle" title="Toggle Theme"><i class="fas fa-sun"></i></button>
+        <button onclick="window.location.href='shop.html'" title="Search"><i class="fas fa-search"></i></button>
+        <button id="cart-btn" title="Cart">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-count">0</span>
+        </button>
+        <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CART DRAWER -->
+  <div class="overlay" id="overlay"></div>
+  <div class="side-drawer" id="cart-drawer">
+    <div class="drawer-header">
+      <h3>Your Cart</h3>
+      <button class="close-drawer" id="close-cart"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="drawer-body"></div>
+    <div class="drawer-footer">
+      <div class="cart-total"><span>Total:</span> <span>GHS 0 / $0</span></div>
+      <a href="#" class="whatsapp-btn" id="whatsapp-checkout" style="display:none;" target="_blank"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- PRODUCT DETAIL SECTION -->
+  <section class="section product-detail-section" style="min-height: 80vh;">
+    <div class="container">
+      <div id="product-detail-container">
+        <!-- Rendered via JS -->
+      </div>
+      <div id="product-not-found" class="hidden" style="text-align:center; padding: 100px 0;">
+        <h2>Product not found</h2>
+        <a href="shop.html" class="btn btn-primary" style="margin-top: 20px;">Back to Shop</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo">Velvet Scent</div>
+          <p>The essence of luxury and exclusivity in every bottle. Handcrafted fragrances for the modern connoisseur.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=Men">Men's Fragrances</a></li>
+            <li><a href="shop.html?category=Women">Women's Fragrances</a></li>
+            <li><a href="shop.html?category=Unisex">Unisex Fragrances</a></li>
+            <li><a href="best-sellers.html">Best Sellers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Help</h4>
+          <ul class="footer-links">
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="faq.html#shipping">Shipping & Returns</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="year"></span> Velvet Scent. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('year').textContent = new Date().getFullYear();
+      
+      const params = new URLSearchParams(window.location.search);
+      const productId = parseInt(params.get('id'));
+      
+      if (!productId || !window.products) {
+        document.getElementById('product-not-found').classList.remove('hidden');
+        return;
+      }
+      
+      const product = window.products.find(p => p.id === productId);
+      
+      if (!product) {
+        document.getElementById('product-not-found').classList.remove('hidden');
+        return;
+      }
+
+      // Update page title
+      document.title = `${product.name} | Velvet Scent`;
+      
+      const inWishlist = wishlist.includes(product.id);
+      const heartIcon = inWishlist ? '<i class="fas fa-heart" style="color:var(--gold-primary)"></i>' : '<i class="far fa-heart"></i>';
+      
+      // WhatsApp single item message
+      const waMessage = `Hello Velvet Scent, I would like to order:%0AProduct: ${product.name}%0AQuantity: 1%0ATotal: GHS ${product.priceGHS.toLocaleString()} / $${product.priceUSD.toLocaleString()}%0APlease assist me with delivery.`;
+      const waUrl = `https://wa.me/1234567890?text=${waMessage}`;
+
+      const stars = Array(Math.floor(product.rating)).fill('<i class="fas fa-star" style="color:var(--gold-primary)"></i>').join('') + 
+                    (product.rating % 1 !== 0 ? '<i class="fas fa-star-half-alt" style="color:var(--gold-primary)"></i>' : '');
+
+      const html = `
+        <div class="product-detail-grid">
+          <div class="product-detail-img-wrapper">
+            <img src="${product.image}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1594035910387-fea47794261f?w=600&h=800&fit=crop';" alt="${product.name}">
+          </div>
+          <div class="product-detail-info">
+            <span style="color: var(--text-secondary); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">${product.category}</span>
+            <h1>${product.name}</h1>
+            
+            <div style="margin-bottom: 20px;">
+              ${stars}
+              <span style="color: var(--text-secondary); margin-left: 10px;">${product.rating} / 5</span>
+            </div>
+
+            <div class="product-detail-price">
+              <span style="color: var(--gold-primary); font-weight: 600;">GHS ${product.priceGHS.toLocaleString()}</span>
+              <span style="color: var(--text-secondary); font-size: 1.2rem; margin-left: 10px;">/ $${product.priceUSD.toLocaleString()}</span>
+            </div>
+            
+            <p class="product-detail-desc">${product.description}</p>
+            
+            <div class="product-detail-actions">
+              <button class="btn btn-primary" onclick="addToCart(${product.id})">Add to Cart</button>
+              <button class="btn btn-outline wishlist-toggle" data-id="${product.id}" onclick="toggleWishlist(${product.id}, this)">${heartIcon}</button>
+            </div>
+            
+            <a href="${waUrl}" class="whatsapp-btn" target="_blank" style="margin-bottom: 30px;">
+              <i class="fab fa-whatsapp"></i> Order on WhatsApp
+            </a>
+            
+            <div style="border-top: 1px solid var(--border-color); padding-top: 20px; font-size: 0.9rem; color: var(--text-secondary);">
+              <p style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--gold-primary); width: 20px;"></i> 100% Authentic Products</p>
+              <p style="margin-bottom: 10px;"><i class="fas fa-truck" style="color: var(--gold-primary); width: 20px;"></i> Fast Delivery Available</p>
+              <p><i class="fas fa-undo" style="color: var(--gold-primary); width: 20px;"></i> 14-Day Return Policy</p>
+            </div>
+          </div>
+        </div>
+      `;
+      
+      document.getElementById('product-detail-container').innerHTML = html;
+    });
+  </script>
+</body>
+</html>
