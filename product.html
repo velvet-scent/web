@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+<<<<<<< HEAD
+
+=======
+>>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +12,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
 <body>
 
   <!-- HEADER -->
@@ -44,7 +52,12 @@
     <div class="drawer-body"></div>
     <div class="drawer-footer">
       <div class="cart-total"><span>Total:</span> <span>GHS 0 / $0</span></div>
+<<<<<<< HEAD
+      <a href="#" class="whatsapp-btn" id="whatsapp-checkout" style="display:none;" target="_blank"><i
+          class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+=======
       <a href="#" class="whatsapp-btn" id="whatsapp-checkout" style="display:none;" target="_blank"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+>>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
     </div>
   </div>
 
@@ -67,7 +80,12 @@
       <div class="footer-grid">
         <div class="footer-col">
           <div class="footer-logo">Velvet Scent</div>
+<<<<<<< HEAD
+          <p>The essence of luxury and exclusivity in every bottle. Handcrafted fragrances for the modern connoisseur.
+          </p>
+=======
           <p>The essence of luxury and exclusivity in every bottle. Handcrafted fragrances for the modern connoisseur.</p>
+>>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
         </div>
         <div class="footer-col">
           <h4>Shop</h4>
@@ -98,17 +116,30 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('year').textContent = new Date().getFullYear();
+<<<<<<< HEAD
+
+      const params = new URLSearchParams(window.location.search);
+      const productId = parseInt(params.get('id'));
+
+=======
       
       const params = new URLSearchParams(window.location.search);
       const productId = parseInt(params.get('id'));
       
+>>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
       if (!productId || !window.products) {
         document.getElementById('product-not-found').classList.remove('hidden');
         return;
       }
+<<<<<<< HEAD
+
+      const product = window.products.find(p => p.id === productId);
+
+=======
       
       const product = window.products.find(p => p.id === productId);
       
+>>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
       if (!product) {
         document.getElementById('product-not-found').classList.remove('hidden');
         return;
@@ -116,6 +147,19 @@
 
       // Update page title
       document.title = `${product.name} | Velvet Scent`;
+<<<<<<< HEAD
+
+      const inWishlist = wishlist.includes(product.id);
+      const heartIcon = inWishlist ? '<i class="fas fa-heart" style="color:var(--gold-primary)"></i>' : '<i class="far fa-heart"></i>';
+
+      // WhatsApp single item message
+      const number = window.WHATSAPP_NUMBER || '233558860176';
+      const waMessage = `Hello Velvet Scent, I would like to order:%0AProduct: ${product.name}%0AQuantity: 1%0ATotal: GHS ${product.priceGHS.toLocaleString()} / $${product.priceUSD.toLocaleString()}%0APlease assist me with delivery.`;
+      const waUrl = `https://wa.me/${number}?text=${waMessage}`;
+
+      const stars = Array(Math.floor(product.rating)).fill('<i class="fas fa-star" style="color:var(--gold-primary)"></i>').join('') +
+        (product.rating % 1 !== 0 ? '<i class="fas fa-star-half-alt" style="color:var(--gold-primary)"></i>' : '');
+=======
       
       const inWishlist = wishlist.includes(product.id);
       const heartIcon = inWishlist ? '<i class="fas fa-heart" style="color:var(--gold-primary)"></i>' : '<i class="far fa-heart"></i>';
@@ -126,6 +170,7 @@
 
       const stars = Array(Math.floor(product.rating)).fill('<i class="fas fa-star" style="color:var(--gold-primary)"></i>').join('') + 
                     (product.rating % 1 !== 0 ? '<i class="fas fa-star-half-alt" style="color:var(--gold-primary)"></i>' : '');
+>>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
 
       const html = `
         <div class="product-detail-grid">
@@ -165,9 +210,18 @@
           </div>
         </div>
       `;
+<<<<<<< HEAD
+
+=======
       
+>>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
       document.getElementById('product-detail-container').innerHTML = html;
     });
   </script>
 </body>
+<<<<<<< HEAD
+
 </html>
+=======
+</html>
+>>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e

@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+// ====== VELVET SCENT GLOBAL CONFIGURATION ======
+// Replace this with your business WhatsApp phone number (include country code, but do NOT add plus (+), dashes, or leading zeros).
+// Example: "233551234567" for Ghana, "15551234567" for USA.
+const WHATSAPP_NUMBER = "1234567890";
+
+=======
+>>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
 const products = [
   // MEN'S (17)
   { id: 1, name: "Oud Noir Absolute", category: "Men", priceGHS: 1200, priceUSD: 100, description: "A deeply masculine blend of rich agarwood, leather, and warm spices.", rating: 5, image: "images/products/1.jpg", isBestSeller: true, isNew: false },
@@ -38,7 +46,11 @@ const products = [
   { id: 34, name: "Gilded Muguet", category: "Women", priceGHS: 1200, priceUSD: 100, description: "Golden interpretations of classic lily of the valley.", rating: 4.5, image: "images/products/34.jpg", isBestSeller: false, isNew: false },
 
   // UNISEX (16)
+<<<<<<< HEAD
+  { id: 35, name: "Santal 33 Tribute", category: "Unisex", priceGHS: 1650, priceUSD: 137, description: "Iconic cardamom, iris, violet, and Australian sandalwood.", rating: 5, image: "images/products/35.jpg", isBestSeller: true, isNew: false },
+=======
   { id: 35, name: "Mirage Wonder", category: "Unisex", priceGHS: 300, priceUSD: 30, description: "Sweet vanilla, citrus zest, jasmine, amber, and smooth sandalwood.", rating: 5, image: "../images/products/mirage_wonder.jpeg", isBestSeller: true, isNew: false },
+>>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
   { id: 36, name: "Fig & Woods", category: "Unisex", priceGHS: 1100, priceUSD: 91, description: "Green fig leaf, creamy fig sap, and white cedar.", rating: 4.7, image: "images/products/36.jpg", isBestSeller: false, isNew: true },
   { id: 37, name: "Bergamot Breeze", category: "Unisex", priceGHS: 850, priceUSD: 70, description: "Sunny Calabrian bergamot and sheer musk.", rating: 4.4, image: "images/products/37.jpg", isBestSeller: false, isNew: false },
   { id: 38, name: "Oud & Rose", category: "Unisex", priceGHS: 1750, priceUSD: 145, description: "The classic Middle Eastern pairing of dark oud and sweet rose.", rating: 4.8, image: "images/products/38.jpg", isBestSeller: false, isNew: false },
@@ -59,4 +71,8 @@ const products = [
 // Helper to expose to window
 if (typeof window !== 'undefined') {
   window.products = products;
+<<<<<<< HEAD
+  window.WHATSAPP_NUMBER = WHATSAPP_NUMBER;
+=======
+>>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
 }

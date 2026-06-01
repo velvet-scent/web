@@ -61,35 +61,64 @@ function initCart() {
   const closeCartBtn = document.getElementById('close-cart');
   const cartDrawer = document.getElementById('cart-drawer');
   const overlay = document.getElementById('overlay');
+<<<<<<< HEAD
+
+=======
   
+>>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
   if (cartBtn && cartDrawer && overlay) {
     cartBtn.addEventListener('click', () => {
       cartDrawer.classList.add('active');
       overlay.classList.add('active');
     });
+<<<<<<< HEAD
+
+=======
     
+>>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
     const closeDrawer = () => {
       cartDrawer.classList.remove('active');
       overlay.classList.remove('active');
     };
+<<<<<<< HEAD
+
+    if (closeCartBtn) closeCartBtn.addEventListener('click', closeDrawer);
+    overlay.addEventListener('click', closeDrawer);
+  }
+
+=======
     
     if (closeCartBtn) closeCartBtn.addEventListener('click', closeDrawer);
     overlay.addEventListener('click', closeDrawer);
   }
   
+>>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
   updateCartUI();
 }
 
 function addToCart(productId, quantity = 1) {
   const product = window.products.find(p => p.id === productId);
   if (!product) return;
+<<<<<<< HEAD
+
+=======
   
+>>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
   const existingItem = cart.find(item => item.id === productId);
   if (existingItem) {
     existingItem.qty += quantity;
   } else {
     cart.push({ ...product, qty: quantity });
   }
+<<<<<<< HEAD
+
+  saveCart();
+
+  // Open drawer automatically
+  const cartDrawer = document.getElementById('cart-drawer');
+  const overlay = document.getElementById('overlay');
+  if (cartDrawer && overlay) {
+=======
   
   saveCart();
   
@@ -97,6 +126,7 @@ function addToCart(productId, quantity = 1) {
   const cartDrawer = document.getElementById('cart-drawer');
   const overlay = document.getElementById('overlay');
   if(cartDrawer && overlay) {
+>>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
     cartDrawer.classList.add('active');
     overlay.classList.add('active');
   }
@@ -124,7 +154,11 @@ function updateCartUI() {
   const countEls = document.querySelectorAll('.cart-count');
   const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
   countEls.forEach(el => el.textContent = totalItems);
+<<<<<<< HEAD
+
+=======
   
+>>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
   // Update Drawer Body
   const drawerBody = document.querySelector('.drawer-body');
   if (drawerBody) {
@@ -150,16 +184,28 @@ function updateCartUI() {
       `).join('');
     }
   }
+<<<<<<< HEAD
+
+  // Update Totals
+  const totalGHS = cart.reduce((sum, item) => sum + (item.priceGHS * item.qty), 0);
+  const totalUSD = cart.reduce((sum, item) => sum + (item.priceUSD * item.qty), 0);
+
+=======
   
   // Update Totals
   const totalGHS = cart.reduce((sum, item) => sum + (item.priceGHS * item.qty), 0);
   const totalUSD = cart.reduce((sum, item) => sum + (item.priceUSD * item.qty), 0);
   
+>>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
   const totalEl = document.querySelector('.cart-total');
   if (totalEl) {
     totalEl.innerHTML = `<span>Total:</span> <span>GHS ${totalGHS.toLocaleString()} / $${totalUSD.toLocaleString()}</span>`;
   }
+<<<<<<< HEAD
+
+=======
   
+>>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
   // Setup WhatsApp Button
   const waBtn = document.getElementById('whatsapp-checkout');
   if (waBtn) {
@@ -167,14 +213,24 @@ function updateCartUI() {
       waBtn.style.display = 'none';
     } else {
       waBtn.style.display = 'flex';
+<<<<<<< HEAD
+
+=======
       
+>>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
       let message = "Hello Velvet Scent, I would like to order:%0A";
       cart.forEach(item => {
         message += `Product: ${item.name}%0AQuantity: ${item.qty}%0A`;
       });
       message += `%0ATotal: GHS ${totalGHS.toLocaleString()} / $${totalUSD.toLocaleString()}%0APlease assist me with delivery.`;
+<<<<<<< HEAD
+
+      const number = window.WHATSAPP_NUMBER || '1234567890';
+      waBtn.href = `https://wa.me/${number}?text=${message}`;
+=======
       
       waBtn.href = `https://wa.me/1234567890?text=${message}`; // Replace with actual number
+>>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
     }
   }
 }
@@ -188,10 +244,17 @@ function toggleWishlist(productId, btnElement) {
   const index = wishlist.indexOf(productId);
   if (index > -1) {
     wishlist.splice(index, 1);
+<<<<<<< HEAD
+    if (btnElement) btnElement.innerHTML = '<i class="far fa-heart"></i>';
+  } else {
+    wishlist.push(productId);
+    if (btnElement) btnElement.innerHTML = '<i class="fas fa-heart" style="color:var(--gold-primary)"></i>';
+=======
     if(btnElement) btnElement.innerHTML = '<i class="far fa-heart"></i>';
   } else {
     wishlist.push(productId);
     if(btnElement) btnElement.innerHTML = '<i class="fas fa-heart" style="color:var(--gold-primary)"></i>';
+>>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
   }
   saveWishlist();
 }
@@ -213,7 +276,11 @@ function updateWishlistUI() {
 function renderProductCard(product) {
   const inWishlist = wishlist.includes(product.id);
   const heartIcon = inWishlist ? '<i class="fas fa-heart" style="color:var(--gold-primary)"></i>' : '<i class="far fa-heart"></i>';
+<<<<<<< HEAD
+
+=======
   
+>>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
   let badge = '';
   if (product.isNew) badge = '<div class="product-badge">New</div>';
   else if (product.isBestSeller) badge = '<div class="product-badge" style="background:#000; color:var(--gold-primary);">Best Seller</div>';
