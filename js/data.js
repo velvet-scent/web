@@ -8,9 +8,9 @@ const WHATSAPP_NUMBER = "1234567890";
 >>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
 const products = [
   // MEN'S (17)
-  { id: 1, name: "Oud Noir Absolute", category: "Men", priceGHS: 1200, priceUSD: 100, description: "A deeply masculine blend of rich agarwood, leather, and warm spices.", rating: 5, image: "images/products/1.jpg", isBestSeller: true, isNew: false },
-  { id: 2, name: "Midnight Vetiver", category: "Men", priceGHS: 950, priceUSD: 80, description: "Earthy vetiver layered with sharp citrus and cedarwood.", rating: 4.5, image: "images/products/2.jpg", isBestSeller: false, isNew: true },
-  { id: 3, name: "Royal Amber", category: "Men", priceGHS: 1400, priceUSD: 115, description: "Luxurious amber, musk, and dark vanilla for the modern gentleman.", rating: 4.8, image: "images/products/3.jpg", isBestSeller: false, isNew: false },
+  { id: 1, name: "Oud Noir Absolute", category: "Men", priceGHS: 1200, priceUSD: 100, description: "A deeply masculine blend of rich agarwood, leather, and warm spices.", rating: 5, image: "images/products/Island.jpeg", isBestSeller: true, isNew: false },
+  { id: 2, name: "Midnight Vetiver", category: "Men", priceGHS: 950, priceUSD: 80, description: "Earthy vetiver layered with sharp citrus and cedarwood.", rating: 4.5, image: "images/products/aura.jpeg", isBestSeller: false, isNew: true },
+  { id: 3, name: "Royal Amber", category: "Men", priceGHS: 1400, priceUSD: 115, description: "Luxurious amber, musk, and dark vanilla for the modern gentleman.", rating: 4.8, image: "images/products/hot_lattafa.png", isBestSeller: false, isNew: false },
   { id: 4, name: "Crimson Spice", category: "Men", priceGHS: 1050, priceUSD: 88, description: "Bold black pepper, cinnamon, and aged rum notes.", rating: 4.2, image: "images/products/4.jpg", isBestSeller: false, isNew: true },
   { id: 5, name: "Silver Birch", category: "Men", priceGHS: 1100, priceUSD: 92, description: "Fresh, crisp birch leaves with a heart of icy mint.", rating: 4.7, image: "images/products/5.jpg", isBestSeller: false, isNew: false },
   { id: 6, name: "Golden Tobacco", category: "Men", priceGHS: 1350, priceUSD: 112, description: "Sweet pipe tobacco entwined with honey and tonka bean.", rating: 4.9, image: "images/products/6.jpg", isBestSeller: true, isNew: false },
@@ -27,9 +27,9 @@ const products = [
   { id: 17, name: "Velvet Tuxedo", category: "Men", priceGHS: 1600, priceUSD: 133, description: "The ultimate evening fragrance. Iris, vanilla, and suede.", rating: 5, image: "images/products/17.jpg", isBestSeller: false, isNew: false },
 
   // WOMEN'S (17)
-  { id: 18, name: "Rose D'Or", category: "Women", priceGHS: 1300, priceUSD: 108, description: "Luminous Damask rose infused with liquid gold and honey.", rating: 4.9, image: "images/products/18.jpg", isBestSeller: true, isNew: false },
-  { id: 19, name: "Jasmine Whisper", category: "Women", priceGHS: 980, priceUSD: 82, description: "Delicate night-blooming jasmine and white tea.", rating: 4.6, image: "images/products/19.jpg", isBestSeller: false, isNew: true },
-  { id: 20, name: "Vanilla Elegance", category: "Women", priceGHS: 1100, priceUSD: 92, description: "Bourbon vanilla absolute, toasted almonds, and cashmere.", rating: 4.8, image: "images/products/20.jpg", isBestSeller: false, isNew: false },
+  { id: 18, name: "Rose D'Or", category: "Women", priceGHS: 1300, priceUSD: 108, description: "Luminous Damask rose infused with liquid gold and honey.", rating: 4.9, image: "images/products/lana_bliss.jpeg", isBestSeller: true, isNew: false },
+  { id: 19, name: "Jasmine Whisper", category: "Women", priceGHS: 980, priceUSD: 82, description: "Delicate night-blooming jasmine and white tea.", rating: 4.6, image: "images/products/malaki_secret.jpeg", isBestSeller: false, isNew: true },
+  { id: 20, name: "Vanilla Elegance", category: "Women", priceGHS: 1100, priceUSD: 92, description: "Bourbon vanilla absolute, toasted almonds, and cashmere.", rating: 4.8, image: "images/products/mirage_citadel.jpeg", isBestSeller: false, isNew: false },
   { id: 21, name: "Blossom Noir", category: "Women", priceGHS: 1450, priceUSD: 120, description: "Dark cherry blossom, patchouli, and mysterious woods.", rating: 4.7, image: "images/products/21.jpg", isBestSeller: false, isNew: true },
   { id: 22, name: "Crystal Peony", category: "Women", priceGHS: 850, priceUSD: 70, description: "Fresh pink peonies, lychee, and sparkling musk.", rating: 4.5, image: "images/products/22.jpg", isBestSeller: false, isNew: false },
   { id: 23, name: "Luminous Lily", category: "Women", priceGHS: 920, priceUSD: 77, description: "Radiant lily of the valley and morning dew.", rating: 4.3, image: "images/products/23.jpg", isBestSeller: false, isNew: false },
@@ -47,12 +47,12 @@ const products = [
 
   // UNISEX (16)
 <<<<<<< HEAD
-  { id: 35, name: "Santal 33 Tribute", category: "Unisex", priceGHS: 1650, priceUSD: 137, description: "Iconic cardamom, iris, violet, and Australian sandalwood.", rating: 5, image: "images/products/35.jpg", isBestSeller: true, isNew: false },
+  { id: 35, name: "Santal 33 Tribute", category: "Unisex", priceGHS: 1650, priceUSD: 137, description: "Iconic cardamom, iris, violet, and Australian sandalwood.", rating: 5, image: "images/products/mirage_wonder.jpeg", isBestSeller: true, isNew: false },
 =======
   { id: 35, name: "Mirage Wonder", category: "Unisex", priceGHS: 300, priceUSD: 30, description: "Sweet vanilla, citrus zest, jasmine, amber, and smooth sandalwood.", rating: 5, image: "../images/products/mirage_wonder.jpeg", isBestSeller: true, isNew: false },
 >>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
-  { id: 36, name: "Fig & Woods", category: "Unisex", priceGHS: 1100, priceUSD: 91, description: "Green fig leaf, creamy fig sap, and white cedar.", rating: 4.7, image: "images/products/36.jpg", isBestSeller: false, isNew: true },
-  { id: 37, name: "Bergamot Breeze", category: "Unisex", priceGHS: 850, priceUSD: 70, description: "Sunny Calabrian bergamot and sheer musk.", rating: 4.4, image: "images/products/37.jpg", isBestSeller: false, isNew: false },
+  { id: 36, name: "Fig & Woods", category: "Unisex", priceGHS: 1100, priceUSD: 91, description: "Green fig leaf, creamy fig sap, and white cedar.", rating: 4.7, image: "images/products/oxana_sugar.jpeg", isBestSeller: false, isNew: true },
+  { id: 37, name: "Bergamot Breeze", category: "Unisex", priceGHS: 850, priceUSD: 70, description: "Sunny Calabrian bergamot and sheer musk.", rating: 4.4, image: "images/products/yara.jpeg", isBestSeller: false, isNew: false },
   { id: 38, name: "Oud & Rose", category: "Unisex", priceGHS: 1750, priceUSD: 145, description: "The classic Middle Eastern pairing of dark oud and sweet rose.", rating: 4.8, image: "images/products/38.jpg", isBestSeller: false, isNew: false },
   { id: 39, name: "Leather & Vanilla", category: "Unisex", priceGHS: 1250, priceUSD: 104, description: "Contrasting soft vanilla with rugged, distressed leather.", rating: 4.6, image: "images/products/39.jpg", isBestSeller: false, isNew: true },
   { id: 40, name: "Smoked Tea", category: "Unisex", priceGHS: 980, priceUSD: 81, description: "Lapsang souchong tea leaves, guaiac wood, and ash.", rating: 4.2, image: "images/products/40.jpg", isBestSeller: false, isNew: false },
