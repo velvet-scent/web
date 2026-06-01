@@ -229,7 +229,7 @@ function updateCartUI() {
       waBtn.href = `https://wa.me/${number}?text=${message}`;
 =======
       
-      waBtn.href = `https://wa.me/1234567890?text=${message}`; // Replace with actual number
+      waBtn.href = `https://wa.me/233558860176?text=${message}`; // Replace with actual number
 >>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
     }
   }
