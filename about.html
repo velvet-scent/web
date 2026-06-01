@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Velvet Scent</title>
+  <meta name="description" content="Learn about the heritage and craftsmanship behind Velvet Scent luxury fragrances.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container navbar">
+      <a href="index.html" class="logo">Velvet Scent</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="new-arrivals.html">New Arrivals</a>
+        <a href="best-sellers.html">Best Sellers</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-icons">
+        <button id="theme-toggle" title="Toggle Theme"><i class="fas fa-sun"></i></button>
+        <button onclick="window.location.href='shop.html'" title="Search"><i class="fas fa-search"></i></button>
+        <button id="cart-btn" title="Cart">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-count">0</span>
+        </button>
+        <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CART DRAWER -->
+  <div class="overlay" id="overlay"></div>
+  <div class="side-drawer" id="cart-drawer">
+    <div class="drawer-header">
+      <h3>Your Cart</h3>
+      <button class="close-drawer" id="close-cart"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="drawer-body"></div>
+    <div class="drawer-footer">
+      <div class="cart-total"><span>Total:</span> <span>GHS 0 / $0</span></div>
+      <a href="#" class="whatsapp-btn" id="whatsapp-checkout" style="display:none;" target="_blank"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- ABOUT HERO -->
+  <section class="hero" style="height: 60vh; min-height: 400px;">
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1595535373192-fc89fe8084be?w=1600&h=900&fit=crop');"></div>
+    <div class="container hero-content">
+      <h1 class="hero-title" style="font-size: 3.5rem;">Our Heritage</h1>
+      <span class="hero-subtitle">The Pursuit of Olfactory Perfection</span>
+    </div>
+  </section>
+
+  <!-- STORY SECTION -->
+  <section class="section">
+    <div class="container" style="max-width: 900px; text-align: center;">
+      <h2 class="section-title">The Velvet Scent Philosophy</h2>
+      <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 30px;">
+        At Velvet Scent, we believe that a fragrance is more than just a scent—it is an invisible garment, a personal signature, and a powerful memory waiting to be unlocked. Founded on the principles of uncompromising luxury and exclusivity, our brand seeks to redefine the modern olfactory experience.
+      </p>
+      <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 50px;">
+        Every bottle of Velvet Scent is a testament to the art of fine perfumery. We source only the rarest, highest-quality ingredients from around the globe—from the deeply resonant oud of the Middle East to the delicate, hand-picked jasmine of Grasse. Our master perfumers blend these precious elements with meticulous precision, ensuring that each creation is a masterpiece of balance, longevity, and sillage.
+      </p>
+    </div>
+  </section>
+
+  <!-- CRAFTSMANSHIP GRID -->
+  <section class="section" style="background-color: var(--surface-color);">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; align-items: center;">
+        <div>
+          <img src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?w=800&h=800&fit=crop" alt="Craftsmanship" style="border-radius: var(--border-radius); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        </div>
+        <div>
+          <h2 style="font-size: 2.5rem; color: var(--gold-primary); margin-bottom: 20px; font-family: var(--font-heading);">Artisanal Craftsmanship</h2>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px;">
+            The creation of a Velvet Scent fragrance is a labor of love that takes months, sometimes years, to perfect. Our artisanal approach means we reject mass production in favor of small, curated batches. This ensures that every nuance of the fragrance profile is preserved and celebrated.
+          </p>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7;">
+            We encase our liquid gold in bespoke, heavy-glass flacons designed to reflect the elegance of the scent within. The sleek black and gold aesthetic is a promise of the luxury you are about to experience.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo">Velvet Scent</div>
+          <p>The essence of luxury and exclusivity in every bottle. Handcrafted fragrances for the modern connoisseur.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=Men">Men's Fragrances</a></li>
+            <li><a href="shop.html?category=Women">Women's Fragrances</a></li>
+            <li><a href="shop.html?category=Unisex">Unisex Fragrances</a></li>
+            <li><a href="best-sellers.html">Best Sellers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Help</h4>
+          <ul class="footer-links">
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="faq.html#shipping">Shipping & Returns</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="year"></span> Velvet Scent. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>

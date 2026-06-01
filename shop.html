@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop | Velvet Scent</title>
+  <meta name="description" content="Explore our full collection of luxury fragrances.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container navbar">
+      <a href="index.html" class="logo">Velvet Scent</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="new-arrivals.html">New Arrivals</a>
+        <a href="best-sellers.html">Best Sellers</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-icons">
+        <button id="theme-toggle" title="Toggle Theme"><i class="fas fa-sun"></i></button>
+        <button onclick="document.getElementById('search-input').focus()" title="Search"><i class="fas fa-search"></i></button>
+        <button id="cart-btn" title="Cart">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-count">0</span>
+        </button>
+        <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CART DRAWER -->
+  <div class="overlay" id="overlay"></div>
+  <div class="side-drawer" id="cart-drawer">
+    <div class="drawer-header">
+      <h3>Your Cart</h3>
+      <button class="close-drawer" id="close-cart"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="drawer-body"></div>
+    <div class="drawer-footer">
+      <div class="cart-total"><span>Total:</span> <span>GHS 0 / $0</span></div>
+      <a href="#" class="whatsapp-btn" id="whatsapp-checkout" style="display:none;" target="_blank"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- SHOP SECTION -->
+  <section class="section" style="padding-top: 120px; min-height: 80vh;">
+    <div class="container">
+      <h1 class="section-title" style="margin-bottom: 20px;">The Collection</h1>
+      
+      <div class="shop-controls">
+        <div class="filter-group" id="filter-group">
+          <button class="filter-btn active" data-filter="All">All</button>
+          <button class="filter-btn" data-filter="Men">Men</button>
+          <button class="filter-btn" data-filter="Women">Women</button>
+          <button class="filter-btn" data-filter="Unisex">Unisex</button>
+          <button class="filter-btn" data-filter="Best Sellers">Best Sellers</button>
+        </div>
+        
+        <div style="display: flex; gap: 15px; align-items: center;">
+          <select id="sort-select" style="padding: 10px; border-radius: 20px; background: var(--surface-color); color: var(--text-primary); border: 1px solid var(--border-color); outline: none; font-family: var(--font-body);">
+            <option value="default">Sort By</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="rating">Popularity (Rating)</option>
+          </select>
+          
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="search-input" placeholder="Search fragrances...">
+          </div>
+        </div>
+      </div>
+
+      <div class="product-grid" id="shop-grid">
+        <!-- Rendered via JS -->
+      </div>
+      
+      <div id="no-results" class="hidden" style="text-align:center; padding: 40px; font-size: 1.2rem; color: var(--text-secondary);">
+        No fragrances match your search criteria.
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo">Velvet Scent</div>
+          <p>The essence of luxury and exclusivity in every bottle. Handcrafted fragrances for the modern connoisseur.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=Men">Men's Fragrances</a></li>
+            <li><a href="shop.html?category=Women">Women's Fragrances</a></li>
+            <li><a href="shop.html?category=Unisex">Unisex Fragrances</a></li>
+            <li><a href="best-sellers.html">Best Sellers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Help</h4>
+          <ul class="footer-links">
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="faq.html#shipping">Shipping & Returns</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="year"></span> Velvet Scent. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('year').textContent = new Date().getFullYear();
+      
+      if (!window.products) return;
+      
+      let currentProducts = [...window.products];
+      let currentFilter = 'All';
+      
+      // Check URL params for category
+      const params = new URLSearchParams(window.location.search);
+      const urlCategory = params.get('category');
+      
+      if (urlCategory) {
+        currentFilter = urlCategory;
+        const btn = document.querySelector(`.filter-btn[data-filter="${urlCategory}"]`);
+        if(btn) {
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        }
+      }
+
+      const grid = 'shop-grid';
+      const noResults = document.getElementById('no-results');
+      
+      const applyFilters = () => {
+        let filtered = [...window.products];
+        
+        // Category Filter
+        if (currentFilter !== 'All') {
+          if (currentFilter === 'Best Sellers') {
+            filtered = filtered.filter(p => p.isBestSeller);
+          } else {
+            filtered = filtered.filter(p => p.category === currentFilter);
+          }
+        }
+        
+        // Search Filter
+        const searchTerm = document.getElementById('search-input').value.toLowerCase();
+        if (searchTerm) {
+          filtered = filtered.filter(p => p.name.toLowerCase().includes(searchTerm) || p.description.toLowerCase().includes(searchTerm));
+        }
+        
+        // Sort
+        const sortVal = document.getElementById('sort-select').value;
+        if (sortVal === 'price-low') {
+          filtered.sort((a,b) => a.priceGHS - b.priceGHS);
+        } else if (sortVal === 'price-high') {
+          filtered.sort((a,b) => b.priceGHS - a.priceGHS);
+        } else if (sortVal === 'rating') {
+          filtered.sort((a,b) => b.rating - a.rating);
+        }
+        
+        currentProducts = filtered;
+        
+        if (currentProducts.length === 0) {
+          document.getElementById(grid).innerHTML = '';
+          noResults.classList.remove('hidden');
+        } else {
+          noResults.classList.add('hidden');
+          renderProducts(currentProducts, grid);
+        }
+      };
+
+      // Initial Render
+      applyFilters();
+
+      // Events
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          e.target.classList.add('active');
+          currentFilter = e.target.getAttribute('data-filter');
+          applyFilters();
+        });
+      });
+      
+      document.getElementById('search-input').addEventListener('input', applyFilters);
+      document.getElementById('sort-select').addEventListener('change', applyFilters);
+    });
+  </script>
+</body>
+</html>
