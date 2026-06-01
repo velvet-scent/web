@@ -2,7 +2,7 @@
 // ====== VELVET SCENT GLOBAL CONFIGURATION ======
 // Replace this with your business WhatsApp phone number (include country code, but do NOT add plus (+), dashes, or leading zeros).
 // Example: "233551234567" for Ghana, "15551234567" for USA.
-const WHATSAPP_NUMBER = "1234567890";
+const WHATSAPP_NUMBER = "233558860176";
 
 =======
 >>>>>>> 2b7b25026a39c7c84c76af2942a21b0465b11c7e
