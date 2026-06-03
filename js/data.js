@@ -1,8 +1,3 @@
-// ====== VELVET SCENT GLOBAL CONFIGURATION ======
-// Replace this with your business WhatsApp phone number (include country code, but do NOT add plus (+), dashes, or leading zeros).
-// Example: "233551234567" for Ghana, "15551234567" for USA.
-const WHATSAPP_NUMBER = "1234567890";
-
 const products = [
   // MEN'S (17)
   { id: 1, name: "Oud Noir Absolute", category: "Men", priceGHS: 1200, priceUSD: 100, description: "A deeply masculine blend of rich agarwood, leather, and warm spices.", rating: 5, image: "images/products/1.jpg", isBestSeller: true, isNew: false },
@@ -64,5 +59,4 @@ const products = [
 // Helper to expose to window
 if (typeof window !== 'undefined') {
   window.products = products;
-  window.WHATSAPP_NUMBER = WHATSAPP_NUMBER;
 }
