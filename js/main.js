@@ -43,7 +43,7 @@ function initMobileMenu() {
 
 /* ====== WHATSAPP HELPER ====== */
 function getWhatsAppNumber() {
-  return window.WHATSAPP_NUMBER || '233551234567';
+  return window.WHATSAPP_NUMBER || '233558860176';
 }
 
 function buildWhatsAppMessage(items) {

@@ -1,6 +1,6 @@
 // ====== VELVET SCENT GLOBAL CONFIGURATION ======
 // WhatsApp number (include country code, no plus signs, dashes, or leading zeros).
-const WHATSAPP_NUMBER = "233551234567";
+const WHATSAPP_NUMBER = "233558860176";
 
 const products = [
   // MEN'S (17)
