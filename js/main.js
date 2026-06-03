@@ -149,7 +149,7 @@ function updateCartUI() {
     } else {
       drawerBody.innerHTML = cart.map(item => `
         <div class="cart-item">
-          <img src="${item.image}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1594035910387-fea47794261f?w=600&h=800&fit=crop';" alt="${item.name}" class="cart-item-img">
+          <img src="${window.products.find(p => p.id === item.id)?.image || item.image}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1594035910387-fea47794261f?w=600&h=800&fit=crop';" alt="${item.name}" class="cart-item-img">
           <div class="cart-item-details">
             <h4 class="cart-item-title">${item.name}</h4>
             <div class="cart-item-price">GHS ${item.priceGHS.toLocaleString()} / $${item.priceUSD}</div>
