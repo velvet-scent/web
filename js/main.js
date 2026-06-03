@@ -47,13 +47,13 @@ function getWhatsAppNumber() {
 }
 
 function buildWhatsAppMessage(items) {
-  let message = "Hello Velvet Scent, I would like to order:%0A";
+  let message = "Hello *Velvet Scent*, I would like to order:%0A%0A";
   items.forEach(item => {
-    message += `Product: ${item.name}%0AQuantity: ${item.qty}%0A`;
+    message += `*Product:* ${item.name}%0A*Quantity:* ${item.qty}%0A%0A`;
   });
   const totalGHS = items.reduce((sum, item) => sum + (item.priceGHS * item.qty), 0);
   const totalUSD = items.reduce((sum, item) => sum + (item.priceUSD * item.qty), 0);
-  message += `%0ATotal: GHS ${totalGHS.toLocaleString()} / $${totalUSD.toLocaleString()}%0APlease assist me with delivery.`;
+  message += `*Total Amount:* GHS ${totalGHS.toLocaleString()} / $${totalUSD.toLocaleString()}%0A%0APlease assist me with delivery.`;
   return message;
 }
 

@@ -125,7 +125,7 @@
       const heartIcon = inWishlist ? '<i class="fas fa-heart" style="color:var(--gold-primary)"></i>' : '<i class="far fa-heart"></i>';
 
       // WhatsApp single item message
-      const waMessage = `Hello Velvet Scent, I would like to order:%0AProduct: ${product.name}%0AQuantity: 1%0ATotal: GHS ${product.priceGHS.toLocaleString()} / $${product.priceUSD.toLocaleString()}%0APlease assist me with delivery.`;
+      const waMessage = `Hello *Velvet Scent*, I would like to order:%0A%0A*Product:* ${product.name}%0A*Quantity:* 1%0A%0A*Total Amount:* GHS ${product.priceGHS.toLocaleString()} / $${product.priceUSD.toLocaleString()}%0A%0APlease assist me with delivery.`;
       const waUrl = `https://wa.me/${getWhatsAppNumber()}?text=${waMessage}`;
 
       const stars = Array(Math.floor(product.rating)).fill('<i class="fas fa-star" style="color:var(--gold-primary)"></i>').join('') +
